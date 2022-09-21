@@ -19,7 +19,7 @@ com_wide <- com %>%
 
 com_wide[is.na(com_wide)] <- 0
 
-# la base de datos es enorme. Para simplificar cogemos solo las cuadrÌculas en 
+# la base de datos es enorme. Para simplificar cogemos solo las cuadr√≠culas en 
 # las que hay especies de Cistus
 cis_utm <- com %>%
   filter(str_detect(sps, "Cistus")) %>% # seleccionar las filas que tienen plots que tienen Quercus
@@ -32,18 +32,18 @@ cis_sps <- com %>%
   distinct(sps) %>% # extraer las cuadriculas que tienen al menos una especie de Cistus
   pull(sps) # seleccionar en la base de datos los plots que tienen Cistus
 
-# todas las especies que est·n en cuadrÌculas en las que est· cistus
+# todas las especies que est√°n en cuadr√≠culas en las que est√° cistus
 cis_tbl <- com %>%
   filter(utm.cell %in% cis_utm)
-# lista de especies acompaÒantes
+# lista de especies acompa√±antes
 acomp <- cis_tbl %>% 
   distinct(sps)
 acomp <- acomp[!acomp %in% cis_sps]
 
 sp <- cis_sps[[1]]
 hi_cor <- lapply(cis_sps, function(sp){
-  # seleccionamos las 10 especies m·s correlacionadas con cada especie
-  # las utm en las que est· la especie de cistus
+  # seleccionamos las 10 especies m√°s correlacionadas con cada especie
+  # las utm en las que est√° la especie de cistus
   cis_utm_tmp <- com %>%
     filter(str_detect(sps,sp)) %>% 
     distinct(utm.cell) %>% # extraer las cuadriculas que tienen al menos una especie de Cistus
@@ -97,7 +97,7 @@ clim_sel <- com %>%
   filter(utm.cell %in% utm_sel) %>%
   distinct()
 
-# guardar la matriz de caracterÌsticas ambientales
+# guardar la matriz de caracter√≠sticas ambientales
 write.csv(clim_sel, "afiber_clim_sel.csv")
 
 # Datos de rasgos ####
@@ -122,7 +122,7 @@ traitGF <- traitGF %>% select(sps, Trait, Data) %>%
 trait_wide <- as.data.frame(left_join(traitGF, traitCuant, by = "sps"))
 rownames(trait_wide) <- trait_wide$sps
 
-# Datos filogenÈticos ####
+# Datos filogen√©ticos ####
 
 # prune and check integrity
 tree <- read.tree("afliber.tre")
