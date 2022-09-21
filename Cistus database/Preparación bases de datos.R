@@ -70,7 +70,7 @@ write.tree(tree$scenario.3, "afliber.tre")
 # original paper here
 # https://www.nature.com/articles/sdata2018135
 
-BROT2_dat <- read.csv("C:/Users/NG.5027073/Dropbox (SCENIC MNCN CSIC)/práce/Nagore uam/Clases/Master Biodiversidad/MODIFICA/Analisis de la biodiversidad en R y SIG/brot/BROT2_dat.csv")
+BROT2_dat <- read.csv("C:/Users/NG.5027073/Dropbox (SCENIC MNCN CSIC)/prÃ¡ce/Nagore uam/Clases/Master Biodiversidad/MODIFICA/Analisis de la biodiversidad en R y SIG/brot/BROT2_dat.csv")
 
 # select a set of traits
 target_trait <- c("SLA", "LeafArea", "Height", "SeedMass", "LNCm", "GrowthForm")
